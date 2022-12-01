@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Метод Белмана-Форда</h1>
+    </header>
+    <div class="wrap">
+        <div>
+            <div class="touch">
+                <div class="clk">
+                    <h2>Збудувати свій граф</h2>
+
+                    <h3>Наявні вершини в графі: </h3>
+                    <div class="vertices"></div>
+
+                    <h3>Додавання вершин: </h3>
+                    <form class="x_y_layer">
+                        <label for="input_letter">
+                            Задайте Букву для нової вершини: <br>
+                            <input id="input_letter" type="text">
+                        </label>
+                        <label for="input_x">
+                            Задайте X для нової вершини: <br>
+                            <input id="input_x" type="number">
+                        </label>
+                        <label for="input_y">
+                            Задайте Y для нової вершини: <br>
+                            <input id="input_y" type="number">
+                        </label>
+                        <button class="submit_coords">Додати вершину</button>
+                    </form>
+
+                    <!--                    <input id="touch" type="text">-->
+
+                    <h3>Додавання шляху: </h3>
+                    <form class="a_b_layer">
+                        <div>
+                            <label for="input_way">
+                                З точки:
+                                <input id="input_way" type="text">
+                            </label>
+                            <label for="output_way">
+                                в точку:
+                                <input id="output_way" type="text">
+                            </label>
+                            <label for="weight">
+                                з вагою:
+                                <input id="weight" type="number">
+                            </label>
+                        </div>
+
+                        <button class="submit_way">Додати шлях</button>
+                    </form>
+<!--                    <button>Ще</button>-->
+<!--                    <button class="done">Готово</button>-->
+                    <a href="../index.html"><button class="main-btn">Перейти до прикладів</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="container"><canvas class="canvas" id="bellmanCanvas"></canvas>
+            <div class="ui"><button class="button" id="displayBtn">Розпочати</button></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
