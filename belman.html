@@ -102,7 +102,7 @@
         <div>
             <div class="touch">
                 <div class="clk">
-                    <button onclick="Click()">Інший граф</button>
+                    <button id="changeBtn" class="main-btn" onclick="changeGraph()">Змінити</button>
                 </div>
             </div>
         </div>
@@ -113,7 +113,6 @@
 
 
     <script>
-
         var graph1 = {
             vertices: ["A", "B", "C", "D", "E"],
             edges: [
@@ -135,18 +134,67 @@
                 E: { x: 420, y: 300 }
             }
         };
-        // click
+        var graph2 = {
+            vertices: ["A", "B", "C", "D", "E"],
+            edges: [
+                { u: "A", v: "B", w: 10 },
+                { u: "A", v: "C", w: 20 },
+                { u: "B", v: "C", w: 30 },
+                { u: "B", v: "D", w: 20 },
+                { u: "B", v: "E", w: 30 },
+                { u: "C", v: "B", w: 10 },
+                { u: "C", v: "D", w: 40 },
+                { u: "C", v: "E", w: 50 },
+                { u: "E", v: "D", w: -50 }
+            ],
+            poses: {
+                A: { x: 60, y: 30 },
+                B: { x: 240, y: 60 },
+                C: { x: 240, y: 300 },
+                D: { x: 420, y: 60 },
+                E: { x: 420, y: 300 }
+            }
+        };
+        var graph3 = {
+            vertices: ["A", "B", "C", "D", "E"],
+            edges: [
+                { u: "A", v: "B", w: 100 },
+                { u: "A", v: "C", w: 200 },
+                { u: "B", v: "C", w: 300 },
+                { u: "B", v: "D", w: 200 },
+                { u: "B", v: "E", w: 300 },
+                { u: "C", v: "B", w: 100 },
+                { u: "C", v: "D", w: 400 },
+                { u: "C", v: "E", w: 500 },
+                { u: "E", v: "D", w: -500 }
+            ],
+            poses: {
+                A: { x: 60, y: 30 },
+                B: { x: 240, y: 60 },
+                C: { x: 240, y: 300 },
+                D: { x: 420, y: 60 },
+                E: { x: 420, y: 300 }
+            }
+        };
 
-       var graph = graph1;
 
 
-       function Click(){
-           alert('змініть налаштування')
-       }
+        // тут пишу перемикач
 
+        var graphIndex = -1;
+        var graphArr = [graph1, graph2, graph3];
 
+        function changeGraph() {
+            if (graphIndex < graphArr.length-1) {
+                graphIndex++;
+            } else {
+                graphIndex = 0;
+            }
+            graph = graphArr[graphIndex];
+            return graph;
+        }
 
-
+        var graph = changeGraph();
 
 
 
